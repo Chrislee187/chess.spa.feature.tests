@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace chess.spa.feature.tests
+namespace chess.spa.feature.tests.Pages
 {
     public class WebDriverPage
     {

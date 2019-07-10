@@ -1,9 +1,10 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace chess.spa.feature.tests
 {
-    public class Browser
+    public class Browser : IDisposable
     {
         public static bool QuitBrowserOnExit = true;
         private static IWebDriver _instance;
@@ -12,10 +13,19 @@ namespace chess.spa.feature.tests
 
         ~Browser()
         {
-            if (QuitBrowserOnExit)
-            {
-                _instance?.Quit();
-            }
+            ReleaseUnmanagedResources();
+        }
+
+        private void ReleaseUnmanagedResources()
+        {
+            _instance.Close();
+            _instance.Quit();
+        }
+
+        public void Dispose()
+        {
+            ReleaseUnmanagedResources();
+            GC.SuppressFinalize(this);
         }
     }
 }
