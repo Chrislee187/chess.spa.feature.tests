@@ -16,8 +16,14 @@ namespace chess.spa.feature.tests.Pages
 
         public void Load()
         {
-            WebDriver.Navigate().GoToUrl(_chessGamePage);
-
+            if (WebDriver.Url == _chessGamePage)
+            {
+                WebDriver.Navigate().Refresh();
+            }
+            else
+            {
+                WebDriver.Navigate().GoToUrl(_chessGamePage);
+            }
             Thread.Sleep(1000); // NOTE: How to wait for the api calls made in WebAssembly to finish?
         }
 

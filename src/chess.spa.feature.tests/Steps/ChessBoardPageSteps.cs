@@ -41,25 +41,15 @@ namespace chess.spa.feature.tests.Steps
         [Then(@"has correct checkered pattern")]
         public void ThenHasCorrectCheckeredPattern()
         {
-            // NOTE: Correct pattern has a black square at A1, we are measuring from top-right to bottom 
-            // left so start with a white square
+            // NOTE: Correct orientation has a black square at A1, we are measuring from top-right to bottom 
+            // left so start with a white square at A8
             var isWhiteSquare = true;
             var count = 0;
             foreach (var sqr in _page.ChessBoard.AllSquares)
             {
-                if (isWhiteSquare)
-                {
-                    sqr.IsWhiteSquare.ShouldBeTrue();
-                }
-                else
-                {
-                    sqr.IsBlackSquare.ShouldBeTrue();
-                }
+                (isWhiteSquare ? sqr.IsWhiteSquare : sqr.IsBlackSquare).ShouldBeTrue();
 
-
-                //                isWhiteSquare = !isWhiteSquare;
-                count++;
-                if (count % 8 != 0)
+                if (++count % 8 != 0)
                 {
                     isWhiteSquare = !isWhiteSquare;
                 }
@@ -79,7 +69,6 @@ namespace chess.spa.feature.tests.Steps
         {
             _page.ChessBoard.ToPlay.ShouldBe(colour.ToLower());
         }
-
 
     }
 }
