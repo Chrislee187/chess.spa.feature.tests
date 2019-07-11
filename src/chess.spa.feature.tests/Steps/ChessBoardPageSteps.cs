@@ -1,20 +1,19 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using chess.spa.feature.tests.Pages;
-using chess.spa.feature.tests.Components;
 using Shouldly;
 using TechTalk.SpecFlow;
 
 namespace chess.spa.feature.tests.Steps
 {
     [Binding]
-    public class InitialBoardStateSteps
+    public class ChessBoardPageSteps
     {
         private ChessGamePage _page;
+
         [Given(@"I am on the chess page")]
         public void GivenIAmOnTheChessPage()
         {
-            _page = new ChessGamePage(Browser.Instance);
+            _page = PagesContainer.ChessGamePage;
         }
 
         [Given(@"a new game has been started")]
@@ -22,6 +21,7 @@ namespace chess.spa.feature.tests.Steps
         {
             _page.Load();
         }
+
 
         [Then(@"there should be 64 board cells")]
         public void ThenThereShouldBeBoardCells()
@@ -57,7 +57,7 @@ namespace chess.spa.feature.tests.Steps
                 }
 
 
-//                isWhiteSquare = !isWhiteSquare;
+                //                isWhiteSquare = !isWhiteSquare;
                 count++;
                 if (count % 8 != 0)
                 {
@@ -80,36 +80,6 @@ namespace chess.spa.feature.tests.Steps
             _page.ChessBoard.ToPlay.ShouldBe(colour.ToLower());
         }
 
-        private SquareComponent _lastSquareClicked;
-
-        [When(@"I click the square at ""(.*)""")]
-        public void WhenIClickTheSquareAt(string location)
-        {
-            _lastSquareClicked = _page.ChessBoard.GetSquare(location);
-
-            _lastSquareClicked.Click();
-        }
-
-        [Then(@"the square is highlighted as a source location")]
-        public void ThenTheSquareIsHighlightedAsASourceLocation()
-        {
-            _lastSquareClicked.IsSourceLocation.ShouldBeTrue();
-        }
-
-        [Then(@"""(.*)"" are highlighted as destination locations")]
-        public void ThenAreHighlightedAsDestinations(string locations)
-        {
-            foreach (var s in locations.Split(","))
-            {
-                _page.ChessBoard.GetSquare(s.Trim()).IsDestinationLocation.ShouldBeTrue();
-            }
-        }
-
-        [Then(@"all highlighting is removed")]
-        public void ThenAllHighlightingIsRemoved()
-        {
-            _page.ChessBoard.AllSquares.All(s => s.IsNotDestinationLocation && s.IsNotSourceLocation).ShouldBeTrue();
-        }
 
     }
 }
