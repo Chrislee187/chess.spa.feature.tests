@@ -25,25 +25,25 @@ namespace chess.spa.feature.tests.Steps
                 .ShouldBeTrue();
         }
 
-        [Then(@"""(.*)"" has no highlighting")]
+        [Then(@"""(.*)"" (?:has|have) no highlighting")]
         public void ThenHasNoHighlighting(string locations) =>
             SelectedLocations(locations)
                 .All(sqr => sqr.HasNoHighlighting)
                 .ShouldBeTrue();
 
-        [Then(@"""(.*)"" has source highlighting")]
+        [Then(@"""(.*)"" (?:has|have) source highlighting")]
         public void ThenHasSourceHighlighting(string locations) =>
             SelectedLocations(locations)
                 .All(sqr => sqr.IsSourceLocation)
                 .ShouldBeTrue();
 
-        [Then(@"""(.*)"" have destination highlighting")]
+        [Then(@"""(.*)"" (?:has|have) destination highlighting")]
         public void ThenHaveDestinationHighlighting(string locations) =>
             SelectedLocations(locations)
                 .All(sqr => sqr.IsDestinationLocation)
                 .ShouldBeTrue();
 
-        [Then(@"locations ""(.*)"" are empty")]
+        [Then(@"locations ""(.*)"" (?:is|are) empty")]
         public void ThenLocationsAreEmpty(string locations) =>
             SelectedLocations(locations)
                 .All(sqr => new[] {".", " ", "_"}.Contains(sqr.Content))

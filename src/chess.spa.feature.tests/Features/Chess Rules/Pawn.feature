@@ -30,6 +30,7 @@ Scenario: Pawns can move one step at start
 	|....K...|
 	When I click the square at "a2"
 	Then "a3,a4" have destination highlighting
+	And "b3" has no highlighting
 	When I click the square at "a3"
 	Then locations "a2" are empty
 	And "a3" contains "P"
@@ -45,8 +46,21 @@ Scenario: Pawns can only move one step after start
 	|........|
 	|....K...|
 	When I click the square at "a3"
-	Then "a4" have destination highlighting
+	Then "a4" has destination highlighting
 	And "a5" has no highlighting
 
+Scenario: Pawns take diagonally
+	Given a custom board is used with "white" to move
+	|....k...|
+	|........|
+	|........|
+	|........|
+	|..ppp...|
+	|...P....|
+	|........|
+	|....K...|
+	When I click the square at "d3"
+	Then "c4,e4" has destination highlighting
+	And "d4" has no highlighting
 
 

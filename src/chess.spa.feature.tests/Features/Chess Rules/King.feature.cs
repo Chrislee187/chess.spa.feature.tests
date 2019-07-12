@@ -101,7 +101,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 16
  testRunner.Then("\"c5,e5,e3,c3\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
- testRunner.And("\"b6,f6,f2,b2\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"b6,f6,f2,b2\" have no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 30
  testRunner.Then("\"d5,d3,c4,e4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 31
- testRunner.And("\"d6,d2,b4,f4\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"d6,d2,b4,f4\" have no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -175,7 +175,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 44
  testRunner.Then("\"c5,c3\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 45
- testRunner.And("\"e3,e4,e5\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"e3,e4,e5\" have no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -212,7 +212,89 @@ this.ScenarioInitialize(scenarioInfo);
 #line 58
  testRunner.Then("\"e2,e3,e5,e6,e7\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 59
- testRunner.And("\"a4,b4,c4,d4,f4,g4,h4\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"a4,b4,c4,d4,f4,g4,h4\" have no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Kings can castle king side")]
+        public virtual void KingsCanCastleKingSide()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Kings can castle king side", null, ((string[])(null)));
+#line 61
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table6.AddRow(new string[] {
+                        "....r..."});
+            table6.AddRow(new string[] {
+                        "........"});
+            table6.AddRow(new string[] {
+                        "........"});
+            table6.AddRow(new string[] {
+                        "....R..."});
+            table6.AddRow(new string[] {
+                        "........"});
+            table6.AddRow(new string[] {
+                        "........"});
+            table6.AddRow(new string[] {
+                        "....K..R"});
+#line 62
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table6, "Given ");
+#line 71
+ testRunner.When("I click the square at \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 72
+ testRunner.Then("\"g1\" has destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 73
+ testRunner.When("I click the square at \"g1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+ testRunner.Then("\"f1\" contains \"R\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 75
+ testRunner.And("\"g1\" contains \"K\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Kings can castle queen side")]
+        public virtual void KingsCanCastleQueenSide()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Kings can castle queen side", null, ((string[])(null)));
+#line 77
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table7.AddRow(new string[] {
+                        "....r..."});
+            table7.AddRow(new string[] {
+                        "........"});
+            table7.AddRow(new string[] {
+                        "........"});
+            table7.AddRow(new string[] {
+                        "....R..."});
+            table7.AddRow(new string[] {
+                        "........"});
+            table7.AddRow(new string[] {
+                        "........"});
+            table7.AddRow(new string[] {
+                        "R...K..."});
+#line 78
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table7, "Given ");
+#line 87
+ testRunner.When("I click the square at \"e1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 88
+ testRunner.Then("\"c1\" has destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 89
+ testRunner.When("I click the square at \"c1\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 90
+ testRunner.Then("\"d1\" contains \"R\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 91
+ testRunner.And("\"c1\" contains \"K\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

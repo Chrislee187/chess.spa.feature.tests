@@ -78,24 +78,24 @@ namespace chess.spa.feature.tests.Features.ChessRules
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "....k..."});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "...N...."});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table6.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "....K..."});
 #line 6
- testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table6, "Given ");
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table8, "Given ");
 #line 15
  testRunner.When("I click the square at \"d4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
