@@ -78,24 +78,24 @@ namespace chess.spa.feature.tests.Features.ChessRules
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "....k..."});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "........"});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "........"});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "........"});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "........"});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "........"});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "P......."});
-            table1.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "....K..."});
 #line 6
- testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table1, "Given ");
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table7, "Given ");
 #line 15
  testRunner.When("I click the square at \"a2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
@@ -119,24 +119,24 @@ this.ScenarioInitialize(scenarioInfo);
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "....k..."});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "........"});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "P......."});
-            table2.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "....K..."});
 #line 22
- testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table2, "Given ");
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table8, "Given ");
 #line 31
  testRunner.When("I click the square at \"a2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 32
@@ -160,24 +160,24 @@ this.ScenarioInitialize(scenarioInfo);
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "....k..."});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "........"});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "........"});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "........"});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "........"});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "P......."});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "........"});
-            table3.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "....K..."});
 #line 38
- testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table3, "Given ");
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table9, "Given ");
 #line 47
  testRunner.When("I click the square at \"a3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48

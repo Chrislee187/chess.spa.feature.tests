@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using chess.spa.feature.tests.Components;
 using OpenQA.Selenium;
 
@@ -34,7 +35,12 @@ namespace chess.spa.feature.tests.Pages
             // TODO: Add to chess.blazor endpoint
             // https://...blazorchess/{boardString} to make work
             WebDriver.Navigate().GoToUrl($"{_host}/customboard/{boardString.Replace(".","_")}");
+
+            // TODO: How to detect/capture WASM errors? eg. when internal API calls fail
+            // custom attribute technique (captures client error and puts the text in an element attribute we can get via selenium
+
             Thread.Sleep(1000); // TODO: How to wait for the api calls made in WebAssembly to finish?
+                                                // Hidden page-status field, that we set the loaded when render finishes
             return ChessBoard;
         }
     }

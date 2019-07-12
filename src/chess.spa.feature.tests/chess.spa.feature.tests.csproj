@@ -19,6 +19,31 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Features\Chess Rules\Bishop.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Bishop.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Chess Rules\King.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>King.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Chess Rules\Knight.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Knight.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Chess Rules\Queen.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Queen.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\Chess Rules\Rook.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Rook.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\InitialBoardState.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -44,6 +69,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\Bishop.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Bishop.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\King.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>King.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\Knight.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Knight.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\Queen.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Queen.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\Rook.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Rook.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\InitialBoardState.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InitialBoardState.feature.cs</LastGenOutput>
