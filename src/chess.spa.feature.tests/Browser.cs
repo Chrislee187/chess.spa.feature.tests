@@ -10,7 +10,24 @@ namespace chess.spa.feature.tests
     {
         private static IWebDriver _instance;
 
-        public static IWebDriver Instance => _instance ??= new ChromeDriver();
+        public static IWebDriver Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    var opts = new ChromeOptions();
+                    // NOTE: Doesn't seem to be any faster, leave off for dev purposes
+                    // TODO: Sort out run headless when run from dotnet test 
+                    //                    opts.AddArguments("headless"); 
+
+                    _instance = new ChromeDriver(opts);
+                }
+
+                return _instance;
+            }
+
+        }
 
         public static void Quit()
         {

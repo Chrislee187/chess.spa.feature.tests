@@ -69,6 +69,15 @@ namespace chess.spa.feature.tests.Steps
         {
             _page.ChessBoard.ToPlay.ShouldBe(colour.ToLower());
         }
+        [Given(@"a custom board is used")]
+        public void GivenACustomBoardIsUsed(Table table)
+        {
+            var ranks = table.Rows.Select(r => r.Values.First());
+
+            var boardString = ranks.Aggregate("", (s, n) => s+=n);
+
+            _page.CustomBoard(boardString);
+        }
 
     }
 }

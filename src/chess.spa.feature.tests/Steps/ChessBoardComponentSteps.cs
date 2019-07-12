@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using chess.spa.feature.tests.Components;
-using OpenQA.Selenium;
 using Shouldly;
 using TechTalk.SpecFlow;
 
@@ -12,59 +10,54 @@ namespace chess.spa.feature.tests.Steps
     public class ChessBoardComponentSteps
     {
         private readonly ChessBoardComponent _board = PagesContainer.ChessGamePage.ChessBoard;
-        private SquareComponent _lastSquareClicked;
 
         [When(@"I click the square at ""(.*)""")]
         public void WhenIClickTheSquareAt(string location)
         {
-            _lastSquareClicked = _board.GetSquare(location);
-
-            _lastSquareClicked.Click();
+            _board.Click(location);
         }
 
-        [Then(@"no squares are highlighted")]
-        public void ThenNoSquaresAreHighlighted()
+        [Then(@"no squares have highlighting")]
+        public void ThenNoSquaresHaveHighlighting()
         {
-            _board.AllSquares.All(s => s.IsNotDestinationLocation && s.IsNotSourceLocation).ShouldBeTrue();
-        }
-
-        [Then(@"""(.*)"" are not highlighted")]
-        public void ThenAreNotHighlighted(string locations)
-        {
-            foreach (var loc in SplitLocations(locations))
-            {
-                var sqr = _board.GetSquare(loc);
-                (sqr.IsNotSourceLocation && sqr.IsNotDestinationLocation).ShouldBeTrue();
-            }
-        }
-
-        [Then(@"""(.*)"" has source highlighting")]
-        public void ThenHasSourceHighlighting(string locations)
-        {
-            foreach (var loc in SplitLocations(locations))
-            {
-                _board.GetSquare(loc).IsSourceLocation.ShouldBeTrue();
-            }
-        }
-
-        [Then(@"""(.*)"" has destination highlighting")]
-        public void ThenHasDestinationHighlighting(string locations)
-        {
-            foreach (var loc in SplitLocations(locations))
-            {
-                _board.GetSquare(loc).IsDestinationLocation.ShouldBeTrue();
-            }
+            _board.AllSquares
+                .All(s => s.HasNoHighlighting)
+                .ShouldBeTrue();
         }
 
         [Then(@"""(.*)"" has no highlighting")]
-        public void ThenHasNoHighlighting(string location)
-        {
-            var sqr = _board.GetSquare(location);
+        public void ThenHasNoHighlighting(string locations) =>
+            SelectedLocations(locations)
+                .All(sqr => sqr.HasNoHighlighting)
+                .ShouldBeTrue();
 
-            sqr.IsNotSourceLocation.ShouldBeTrue();
-            sqr.IsNotDestinationLocation.ShouldBeTrue();
-        }
+        [Then(@"""(.*)"" has source highlighting")]
+        public void ThenHasSourceHighlighting(string locations) =>
+            SelectedLocations(locations)
+                .All(sqr => sqr.IsSourceLocation)
+                .ShouldBeTrue();
 
-        private IEnumerable<string> SplitLocations(string locations) => locations.Split(",").Select(l => l.Trim());
+        [Then(@"""(.*)"" have destination highlighting")]
+        public void ThenHaveDestinationHighlighting(string locations) =>
+            SelectedLocations(locations)
+                .All(sqr => sqr.IsDestinationLocation)
+                .ShouldBeTrue();
+
+        [Then(@"locations ""(.*)"" are empty")]
+        public void ThenLocationsAreEmpty(string locations) =>
+            SelectedLocations(locations)
+                .All(sqr => new[] {".", " "}.Contains(sqr.Content))
+                .ShouldBeTrue();
+
+        [Then(@"""(.*)"" contains ""(.*)""")]
+        public void ThenContains(string location, string content) =>
+            _board.GetSquare(location).Content.Equals(content);
+
+        private IEnumerable<string> SplitLocations(string locations) => 
+            locations.Split(",")
+                .Select(l => l.Trim());
+
+        private IEnumerable<SquareComponent> SelectedLocations(string locations) =>
+            SplitLocations(locations).Select(loc => _board.GetSquare(loc));
     }
 }

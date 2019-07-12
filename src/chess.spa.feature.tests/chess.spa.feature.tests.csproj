@@ -24,6 +24,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>InitialBoardState.feature</DependentUpon>
     </Compile>
+    <Compile Update="Features\Chess Rules\Pawn.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pawn.feature</DependentUpon>
+    </Compile>
     <Compile Update="Features\PieceHighlighting.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -42,6 +47,10 @@
     <SpecFlowFeatureFiles Update="Features\InitialBoardState.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>InitialBoardState.feature.cs</LastGenOutput>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\Chess Rules\Pawn.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Pawn.feature.cs</LastGenOutput>
     </SpecFlowFeatureFiles>
     <SpecFlowFeatureFiles Update="Features\PieceHighlighting.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

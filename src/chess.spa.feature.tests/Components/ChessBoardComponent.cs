@@ -40,5 +40,14 @@ namespace chess.spa.feature.tests.Components
             .GetAttribute("class").Split(' ')
             .Single(c => c.EndsWith("-to-play"))
             .Replace("-to-play", "");
+
+        public SquareComponent Click(string location)
+        {
+            var sqr = GetSquare(location);
+
+            sqr.Click();
+
+            return sqr;
+        }
     }
 }

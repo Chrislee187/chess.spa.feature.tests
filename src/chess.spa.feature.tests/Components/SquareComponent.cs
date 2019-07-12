@@ -17,6 +17,7 @@ namespace chess.spa.feature.tests.Components
         public bool IsDestinationLocation => RootElement.Wait().ForClasses().ToContain(CssClassNames.DestinationLocation);
         public string Content => RootElement.Text;
 
+        public bool HasNoHighlighting => IsNotSourceLocation && IsNotDestinationLocation;
         public void Click()
         {
             RootElement.Click();

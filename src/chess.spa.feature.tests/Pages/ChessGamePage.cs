@@ -28,5 +28,12 @@ namespace chess.spa.feature.tests.Pages
         }
 
         public ChessBoardComponent ChessBoard => new ChessBoardComponent(WebDriver);
+
+        public ChessBoardComponent CustomBoard(string boardString)
+        {
+            // TODO: Add to chess.blazor endpoint
+            // https://...blazorchess/{boardString} to make work
+            throw new System.NotImplementedException("TODO: Custom board support not yet implemented");
+        }
     }
 }
