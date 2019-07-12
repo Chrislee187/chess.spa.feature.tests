@@ -31,7 +31,7 @@ namespace chess.spa.feature.tests.Features.ChessRules
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pawn Rules", "\tEnsure the rules of chess for pawns are correct enforced", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pawn Rules", "\tEnsure the rules of chess for pawns are correctly enforced and implemented", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -77,19 +77,34 @@ namespace chess.spa.feature.tests.Features.ChessRules
 #line 5
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table1.AddRow(new string[] {
+                        "........"});
+            table1.AddRow(new string[] {
+                        "........"});
+            table1.AddRow(new string[] {
+                        "........"});
+            table1.AddRow(new string[] {
+                        "........"});
+            table1.AddRow(new string[] {
+                        "........"});
+            table1.AddRow(new string[] {
+                        "P......."});
+            table1.AddRow(new string[] {
+                        "....K..."});
 #line 6
- testRunner.Given("I am on the chess page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.And("a new game has been started", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table1, "Given ");
+#line 15
  testRunner.When("I click the square at \"a2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
+#line 16
  testRunner.Then("\"a3,a4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 10
+#line 17
  testRunner.When("I click the square at \"a4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
+#line 18
  testRunner.Then("locations \"a2\" are empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
+#line 19
  testRunner.And("\"a4\" contains \"P\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -100,22 +115,37 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PawnsCanMoveOneStepAtStart()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pawns can move one step at start", null, ((string[])(null)));
-#line 14
+#line 21
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 15
- testRunner.Given("I am on the chess page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
- testRunner.And("a new game has been started", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table2.AddRow(new string[] {
+                        "........"});
+            table2.AddRow(new string[] {
+                        "........"});
+            table2.AddRow(new string[] {
+                        "........"});
+            table2.AddRow(new string[] {
+                        "........"});
+            table2.AddRow(new string[] {
+                        "........"});
+            table2.AddRow(new string[] {
+                        "P......."});
+            table2.AddRow(new string[] {
+                        "....K..."});
+#line 22
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table2, "Given ");
+#line 31
  testRunner.When("I click the square at \"a2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
+#line 32
  testRunner.Then("\"a3,a4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 19
+#line 33
  testRunner.When("I click the square at \"a3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 20
+#line 34
  testRunner.Then("locations \"a2\" are empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
+#line 35
  testRunner.And("\"a3\" contains \"P\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -126,70 +156,34 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PawnsCanOnlyMoveOneStepAfterStart()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pawns can only move one step after start", null, ((string[])(null)));
-#line 23
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 24
- testRunner.Given("I am on the chess page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 25
- testRunner.And("a new game has been started", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 26
- testRunner.When("I click the square at \"a2\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
- testRunner.Then("\"a3,a4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 28
- testRunner.When("I click the square at \"a3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.Then("locations \"a2\" are empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 30
- testRunner.And("\"a3\" contains \"P\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
- testRunner.When("I click the square at \"h7\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 32
- testRunner.And("I click the square at \"h6\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.When("I click the square at \"a3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 34
- testRunner.Then("\"a4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Pawns can only move one step after start - type 2")]
-        public virtual void PawnsCanOnlyMoveOneStepAfterStart_Type2()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Pawns can only move one step after start - type 2", null, ((string[])(null)));
-#line 36
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
 #line 37
- testRunner.Given("I am on the chess page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
 #line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "...P..."});
-            table1.AddRow(new string[] {
-                        "......."});
-            table1.AddRow(new string[] {
-                        "......."});
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table3.AddRow(new string[] {
+                        "........"});
+            table3.AddRow(new string[] {
+                        "........"});
+            table3.AddRow(new string[] {
+                        "........"});
+            table3.AddRow(new string[] {
+                        "........"});
+            table3.AddRow(new string[] {
+                        "P......."});
+            table3.AddRow(new string[] {
+                        "........"});
+            table3.AddRow(new string[] {
+                        "....K..."});
 #line 38
- testRunner.And("a custom board is used", ((string)(null)), table1, "And ");
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table3, "Given ");
 #line 47
- testRunner.When("I click the square at \"d4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I click the square at \"a3\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 48
- testRunner.Then("\"d5\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"a4\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 49
- testRunner.And("\"d6\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("\"a5\" has no highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

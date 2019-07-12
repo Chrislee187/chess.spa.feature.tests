@@ -1,10 +1,17 @@
 ﻿Feature: Pawn Rules
-	Ensure the rules of chess for pawns are correct enforced
+	Ensure the rules of chess for pawns are correctly enforced and implemented
 
 
 Scenario: Pawns can move two steps at start
-	Given I am on the chess page
-	And a new game has been started
+	Given a custom board is used with "white" to move
+	|....k...|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|P.......|
+	|....K...|
 	When I click the square at "a2"
 	Then "a3,a4" have destination highlighting
 	When I click the square at "a4"
@@ -12,8 +19,15 @@ Scenario: Pawns can move two steps at start
 	And "a4" contains "P"
 
 Scenario: Pawns can move one step at start
-	Given I am on the chess page
-	And a new game has been started
+	Given a custom board is used with "white" to move
+	|....k...|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|P.......|
+	|....K...|
 	When I click the square at "a2"
 	Then "a3,a4" have destination highlighting
 	When I click the square at "a3"
@@ -21,32 +35,18 @@ Scenario: Pawns can move one step at start
 	And "a3" contains "P"
 
 Scenario: Pawns can only move one step after start
-	Given I am on the chess page
-	And a new game has been started
-	When I click the square at "a2"
-	Then "a3,a4" have destination highlighting
-	When I click the square at "a3"
-	Then locations "a2" are empty
-	And "a3" contains "P"
-	When I click the square at "h7"
-	And I click the square at "h6"
+	Given a custom board is used with "white" to move
+	|....k...|
+	|........|
+	|........|
+	|........|
+	|........|
+	|P.......|
+	|........|
+	|....K...|
 	When I click the square at "a3"
 	Then "a4" have destination highlighting
-
-Scenario: Pawns can only move one step after start - type 2
-	Given I am on the chess page
-	And a custom board is used
-	|.......|
-	|.......|
-	|.......|
-	|.......|
-	|.......|
-	|...P...|
-	|.......|
-	|.......|
-	When I click the square at "d4"
-	Then "d5" have destination highlighting
-	And "d6" has no highlighting
+	And "a5" has no highlighting
 
 
 

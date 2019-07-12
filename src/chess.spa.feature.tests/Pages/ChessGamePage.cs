@@ -6,25 +6,25 @@ namespace chess.spa.feature.tests.Pages
 {
     public class ChessGamePage : WebDriverPage
     {
-        private readonly string _chessGamePage;
+        private readonly string _host;
 
 
-        public ChessGamePage(IWebDriver webDriver, string chessGamePage = "http://localhost:52192/blazorchess") : base(webDriver)
+        public ChessGamePage(IWebDriver webDriver, string host = "http://localhost:52192") : base(webDriver)
         {
-            _chessGamePage = chessGamePage;
+            _host = host;
         }
 
         public void Load()
         {
-            if (WebDriver.Url == _chessGamePage)
+            if (WebDriver.Url == _host)
             {
                 WebDriver.Navigate().Refresh();
             }
             else
             {
-                WebDriver.Navigate().GoToUrl(_chessGamePage);
+                WebDriver.Navigate().GoToUrl($"{_host}/blazorchess");
             }
-            Thread.Sleep(1000); // NOTE: How to wait for the api calls made in WebAssembly to finish?
+            Thread.Sleep(1000); // TODO: How to wait for the api calls made in WebAssembly to finish?
         }
 
         public ChessBoardComponent ChessBoard => new ChessBoardComponent(WebDriver);
@@ -33,7 +33,9 @@ namespace chess.spa.feature.tests.Pages
         {
             // TODO: Add to chess.blazor endpoint
             // https://...blazorchess/{boardString} to make work
-            throw new System.NotImplementedException("TODO: Custom board support not yet implemented");
+            WebDriver.Navigate().GoToUrl($"{_host}/customboard/{boardString.Replace(".","_")}");
+            Thread.Sleep(1000); // TODO: How to wait for the api calls made in WebAssembly to finish?
+            return ChessBoard;
         }
     }
 }

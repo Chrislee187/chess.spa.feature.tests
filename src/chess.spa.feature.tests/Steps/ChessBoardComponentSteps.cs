@@ -46,7 +46,7 @@ namespace chess.spa.feature.tests.Steps
         [Then(@"locations ""(.*)"" are empty")]
         public void ThenLocationsAreEmpty(string locations) =>
             SelectedLocations(locations)
-                .All(sqr => new[] {".", " "}.Contains(sqr.Content))
+                .All(sqr => new[] {".", " ", "_"}.Contains(sqr.Content))
                 .ShouldBeTrue();
 
         [Then(@"""(.*)"" contains ""(.*)""")]

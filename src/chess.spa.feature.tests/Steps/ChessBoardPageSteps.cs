@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using chess.spa.feature.tests.Helpers;
 using chess.spa.feature.tests.Pages;
 using Shouldly;
 using TechTalk.SpecFlow;
@@ -69,14 +72,23 @@ namespace chess.spa.feature.tests.Steps
         {
             _page.ChessBoard.ToPlay.ShouldBe(colour.ToLower());
         }
-        [Given(@"a custom board is used")]
-        public void GivenACustomBoardIsUsed(Table table)
+
+        [Given(@"a custom board is used with ""(.*)"" to move")]
+        public void GivenACustomBoardIsUsedWithToMove(string toMoveColour, Table table)
         {
-            var ranks = table.Rows.Select(r => r.Values.First());
+            var ranks = new List<string> { table.Header.First() };
 
-            var boardString = ranks.Aggregate("", (s, n) => s+=n);
+            ranks.AddRange(table.Rows.Select(r => r.Values.First()));
 
-            _page.CustomBoard(boardString);
+            var boardString = ranks.Aggregate("", (s, n) => s += n);
+
+            if (!new[] { "k", "K" }.All(k => boardString.Contains(k)))
+            {
+                throw new ArgumentException("Board must include both kings");
+            }
+
+            _page = PagesContainer.ChessGamePage;
+            _page.CustomBoard(boardString + $"{toMoveColour.ColourTextToSerialisedTurnIndicator()}0000");
         }
 
     }
