@@ -63,4 +63,20 @@ Scenario: Pawns take diagonally
 	Then "c4,e4" has destination highlighting
 	And "d4" has no highlighting
 
+Scenario: Pawns can take with en-passant
+	Given a custom board is used with "black" to move
+	|....k...|
+	|........|
+	|........|
+	|........|
+	|...Ep...|
+	|........|
+	|........|
+	|....K...|
+	When I click the square at "e4"
+	Then "d3,e3" has destination highlighting
+	And "f3" has no highlighting
+
+Scenario: Pawn promotions
+	# TODO: Implement UI for promotion moves from the board in the clients
 
