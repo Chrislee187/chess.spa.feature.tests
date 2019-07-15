@@ -89,3 +89,30 @@ Scenario: Kings can castle queen side
 	When I click the square at "c1"
 	Then "d1" contains "R"
 	And "c1" contains "K"
+
+Scenario: Kings cannot move next to each other white to move
+	Given a custom board is used with "white" to move
+	|..K.k...|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	When I click the square at "c8"
+	Then "d8" has no highlighting
+
+	
+Scenario: Kings cannot move next to each other black to move
+	Given a custom board is used with "black" to move
+	|..K.k...|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	|........|
+	When I click the square at "e8"
+	Then "d8" has no highlighting
