@@ -103,6 +103,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Knights can jump other pieeces")]
+        public virtual void KnightsCanJumpOtherPieeces()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Knights can jump other pieeces", null, ((string[])(null)));
+#line 19
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "....k..."});
+            table11.AddRow(new string[] {
+                        "........"});
+            table11.AddRow(new string[] {
+                        "...p...."});
+            table11.AddRow(new string[] {
+                        "..PPP..."});
+            table11.AddRow(new string[] {
+                        ".PpNpP.."});
+            table11.AddRow(new string[] {
+                        "..PPP..."});
+            table11.AddRow(new string[] {
+                        "...P...."});
+            table11.AddRow(new string[] {
+                        "....K..."});
+#line 20
+ testRunner.Given("a custom board is used with \"white\" to move", ((string)(null)), table11, "Given ");
+#line 29
+ testRunner.When("I click the square at \"d4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.Then("\"e6, f5, f3, e2, c2, b3, b5, c6\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

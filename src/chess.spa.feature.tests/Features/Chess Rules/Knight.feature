@@ -15,3 +15,17 @@ Scenario: Knights jump in eight directions
 	When I click the square at "d4"
 	Then "e6, f5, f3, e2, c2, b3, b5, c6" have destination highlighting
 
+
+Scenario: Knights can jump other pieeces
+	Given a custom board is used with "white" to move
+	|....k...|
+	|........|
+	|...p....|
+	|..PPP...|
+	|.PpNpP..|
+	|..PPP...|
+	|...P....|
+	|....K...|
+	When I click the square at "d4"
+	Then "e6, f5, f3, e2, c2, b3, b5, c6" have destination highlighting
+
