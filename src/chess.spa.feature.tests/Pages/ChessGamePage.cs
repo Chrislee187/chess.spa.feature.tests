@@ -10,7 +10,7 @@ namespace chess.spa.feature.tests.Pages
         private readonly string _host;
 
 
-        public ChessGamePage(IWebDriver webDriver, string host = "http://localhost:52192") : base(webDriver)
+        public ChessGamePage(IWebDriver webDriver, string host = "http://localhost:6001") : base(webDriver)
         {
             _host = host;
         }

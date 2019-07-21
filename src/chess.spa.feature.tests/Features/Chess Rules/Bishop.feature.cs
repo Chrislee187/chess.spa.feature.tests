@@ -99,7 +99,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 15
  testRunner.When("I click the square at \"d4\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 16
- testRunner.Then("\"c5,b6,a77\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\"c5,b6,a7\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 17
  testRunner.And("\"e5,f6,g7,h8\" have destination highlighting", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
